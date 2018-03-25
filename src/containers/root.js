@@ -10,6 +10,7 @@ import baseStyles from '../styled-components/baseStyles';
 
 import Home from './Home';
 import Events from './Events';
+import Event from './Event';
 
 const Root = () => {
   baseStyles();
@@ -20,6 +21,7 @@ const Root = () => {
           <div>
             <Route exact path="/home" component={Home} />
             <Route exact path="/" component={Events} />
+            <Route exact path="/event" component={Event} />
           </div>
         </Router>
       </PersistGate>
