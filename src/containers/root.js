@@ -8,6 +8,7 @@ const { store, persistor } = configureStore();
 
 import baseStyles from '../styled-components/baseStyles';
 
+import Home from './Home';
 import Main from './Main';
 
 const Root = () => {
@@ -17,6 +18,7 @@ const Root = () => {
       <PersistGate loading="loading..." persistor={persistor}>
         <Router>
           <div>
+            <Route exact path="/home" component={Home} />
             <Route exact path="/" component={Main} />
           </div>
         </Router>
