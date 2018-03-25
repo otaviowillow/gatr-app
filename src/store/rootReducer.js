@@ -2,11 +2,11 @@
 import { combineReducers } from 'redux';
 
 import system from '../containers/System/reducers';
-import main from '../containers/Main/reducers';
+import events from '../containers/Events/reducers';
 
 const rootReducer = combineReducers({
   system,
-  main
+  events
 });
 
 export default rootReducer;

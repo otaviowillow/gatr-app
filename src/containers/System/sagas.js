@@ -1,19 +1,28 @@
-import { takeEvery, put } from 'redux-saga/effects';
+import { takeEvery, put, select, call } from 'redux-saga/effects';
 import axios from 'axios';
 
+const AUTH_TOKEN = '4d998ffb35d41368af53d9e4f49bfe82';
 axios.defaults.baseURL = 'https://dev.api.gatrapp.com';
+axios.defaults.headers.common['api-key'] = AUTH_TOKEN;
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
-export function* handleEventsForLocation() {
-  yield put({type: 'IS_AUTHENTICATED'});
+const currentFacebookToken = state => state.system.facebookToken;
+
+export function* handleLogin() {
+  yield put({type: 'IS_GETTING_AUTHENTICATED'});
   try {
-    yield console.log(response);
+    const facebookToken = yield select(currentFacebookToken);
+    const response = yield call(axios.post, '/auth/facebook', {
+      access_token: facebookToken
+    });
+    yield put({type: 'SET_USER', payload: response.data.data});
+    yield put({type: 'SET_USER_AUTH', payload: true});
   } catch(error) {
-    yield console.log(error);
     yield put({type: 'DISPLAY_ERROR_MESSAGE', payload: error});
   }
-  yield put({type: 'DONE_AUTHENTICATED'});
+  yield put({type: 'DONE_GETTING_AUTHENTICATED'});
 }
 
 export function* watchLoginRequests() {
-  yield takeEvery('LOGIN_WITH_FACEBOOK', handleEventsForLocation);
+  yield takeEvery('LOGIN_WITH_FACEBOOK', handleLogin);
 }

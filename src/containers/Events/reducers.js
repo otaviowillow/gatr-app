@@ -1,4 +1,4 @@
-const main = (state = {
+const events = (state = {
   isFetching: false,
   currentEvents: {}
 }, action) => {
@@ -28,4 +28,4 @@ const main = (state = {
   return state;
 };
 
-export default main;
+export default events;

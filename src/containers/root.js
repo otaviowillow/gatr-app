@@ -9,7 +9,7 @@ const { store, persistor } = configureStore();
 import baseStyles from '../styled-components/baseStyles';
 
 import Home from './Home';
-import Main from './Main';
+import Events from './Events';
 
 const Root = () => {
   baseStyles();
@@ -19,7 +19,7 @@ const Root = () => {
         <Router>
           <div>
             <Route exact path="/home" component={Home} />
-            <Route exact path="/" component={Main} />
+            <Route exact path="/" component={Events} />
           </div>
         </Router>
       </PersistGate>

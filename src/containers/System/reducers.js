@@ -1,17 +1,34 @@
 const system = (state = {
+  isAuthenticating: false,
   isAuthenticated: false,
-  token: ''
+  facebookToken: '',
+  user: {},
 }, action) => {
   switch (action.type) {
-    case "IS_AUTHENTICATED":
+    case "IS_GETTING_AUTHENTICATED":
       return {
         ...state,
-        isAuthenticated: true
+        isAuthenticating: true
       };
-    case "DONE_AUTHENTICATED":
+    case "DONE_GETTING_AUTHENTICATED":
       return {
         ...state,
-        isAuthenticated: false
+        isAuthenticating: false
+      };
+    case "LOGIN_WITH_FACEBOOK":
+      return {
+        ...state,
+        facebookToken: action.payload
+      };
+    case "SET_USER":
+      return {
+        ...state,
+        user: action.payload
+      };
+    case "SET_USER_AUTH":
+      return {
+        ...state,
+        isAuthenticated: action.payload
       };
     default:
       state = state;

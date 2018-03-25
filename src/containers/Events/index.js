@@ -5,7 +5,7 @@ import { getEventsForLocation } from './actions';
 
 import { ContentWrapper, Aside, P } from '../../styled-components';
 
-class Main extends React.Component {
+class Events extends React.Component {
   componentDidMount() {
     this.props.getEventsForLocation();
   }
@@ -22,8 +22,8 @@ class Main extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    isFetching: state.main.isFetching,
-    currentEvents: state.main.currentEvents
+    isFetching: state.events.isFetching,
+    currentEvents: state.events.currentEvents
   };
 };
 
@@ -35,4 +35,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Main);
+export default connect(mapStateToProps, mapDispatchToProps)(Events);

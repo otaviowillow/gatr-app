@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import FacebookLogin from 'react-facebook-login';
+import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
 
-// import { getEventsForLocation } from './actions';
+import { facebookLogin } from '../System/actions';
 
 // import { ContentWrapper, Aside, P } from '../../styled-components';
 
@@ -15,13 +15,13 @@ class Home extends React.Component {
       <div>
         <p>asdsa</p>
         <FacebookLogin
-          id={'140423843185571'}
-          autoLoad={false}
-          fields="name,email,picture"
-          icon="fa-facebook"
-          textButton="Sign in and see what's up!"
-          cssClass="facebook-button"
-          response={response => console.log(response)}
+          appId="140423843185571"
+          autoLoad
+          reauthenticate
+          callback={response => this.props.facebookLogin(response.accessToken)}
+          render={renderProps => (
+            <button onClick={renderProps.onClick}>This is my custom FB button</button>
+          )}
         />
       </div>
     );
@@ -34,12 +34,12 @@ const mapStateToProps = (state) => {
   };
 };
 
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     getEventsForLocation: () => {
-//       dispatch(getEventsForLocation());
-//     }
-//   };
-// };
+const mapDispatchToProps = (dispatch) => {
+  return {
+    facebookLogin: (token) => {
+      dispatch(facebookLogin(token));
+    }
+  };
+};
 
-export default connect(mapStateToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
