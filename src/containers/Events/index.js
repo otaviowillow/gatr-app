@@ -1,19 +1,33 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { parse } from 'qs';
 
 import { getEventsForLocation } from './actions';
 
-import { ContentWrapper, Aside, P } from '../../styled-components';
+import { ContentWrapper, Aside } from '../../styled-components';
+
+import EventHeader from '../../components/EventHeader';
 
 class Events extends React.Component {
-  componentDidMount() {
-    this.props.getEventsForLocation();
+  componentWillMount() {
+    const query = parse(location.search.substr(1));
+
+    this.props.getEventsForLocation({
+      lat: query.lat,
+      lng: query.lng
+    });
   }
   render() {
+    if(this.props.isFetching) {
+      return <p>Loading...</p>;
+    }
+
     return(
       <ContentWrapper>
-        <Aside size="30%">
-          <P>asdds</P>
+        <Aside size="40%">
+          {this.props.events.map((event, i) => (
+            <EventHeader key={i} title={event.name} />
+          ))}
         </Aside>
       </ContentWrapper>
     );
@@ -23,14 +37,14 @@ class Events extends React.Component {
 const mapStateToProps = (state) => {
   return {
     isFetching: state.events.isFetching,
-    currentEvents: state.events.currentEvents
+    events: state.events.list
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getEventsForLocation: () => {
-      dispatch(getEventsForLocation());
+    getEventsForLocation: (loc) => {
+      dispatch(getEventsForLocation(loc));
     }
   };
 };
