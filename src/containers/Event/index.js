@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { getEventsForLocation } from './actions';
+import { getEvent } from './actions';
 
 class Event extends React.Component {
   componentDidMount() {
-    // this.props.getEventsForLocation();
+    this.props.getEvent();
   }
   render() {
     return(
@@ -23,8 +23,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getEventsForLocation: () => {
-      dispatch(getEventsForLocation());
+    getEvent: () => {
+      dispatch(getEvent());
     }
   };
 };

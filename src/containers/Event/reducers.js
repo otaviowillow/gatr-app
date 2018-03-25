@@ -1,6 +1,8 @@
 const events = (state = {
   isFetching: false,
-  item: {}
+  item: {
+    id: ''
+  }
 }, action) => {
   switch (action.type) {
     case "IS_FETCHING_EVENT":
@@ -12,6 +14,13 @@ const events = (state = {
       return {
         ...state,
         isFetching: false
+      };
+    case "GET_EVENT":
+      return {
+        ...state,
+        item: {
+          id: action.payload
+        }
       };
     case "SET_EVENT":
       return {

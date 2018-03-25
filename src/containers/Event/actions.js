@@ -1,5 +1,5 @@
-export function getEventsForLocation() {
+export function getEvent() {
   return {
-    type: "GET_EVENTS_FOR_LOCATION"
+    type: "GET_EVENT"
   };
 }

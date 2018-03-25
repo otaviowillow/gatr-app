@@ -12,10 +12,17 @@ export function* handleEvent() {
   yield put({type: 'IS_FETCHING_EVENT'});
   try {
     const user = yield select(currentUser);
-
+    const bearer = 'Bearer ' + user.accessToken;
+    const currentEventId = 413400742463303;
+    const response = yield call(axios.get, '/events/' + currentEventId, {
+      headers: {
+        Authorization: bearer
+      }
+    });
+    yield console.log(response);
     yield put({type: 'SET_EVENT', payload: response.data.data});
   } catch(error) {
-    yield put({type: 'DISPLAY_ERROR_MESSAGE', payload: error.response.data.errors});
+    yield put({type: 'DISPLAY_ERROR_MESSAGE', payload: error});
   }
   yield put({type: 'DONE_FETCHING_EVENT'});
 }

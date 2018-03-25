@@ -12,8 +12,6 @@ export function* handleEventsForLocation() {
   yield put({type: 'IS_FETCHING_MAIN'});
   try {
     const user = yield select(currentUser);
-    yield console.log(user);
-    yield console.log(user.accessToken);
     const bearer = 'Bearer ' + user.accessToken;
 
     const response = yield call(axios.get, '/search', {
