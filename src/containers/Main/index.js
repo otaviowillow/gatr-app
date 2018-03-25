@@ -1,24 +1,36 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import { getEventsForLocation } from './actions';
+
+import { ContentWrapper, Aside, P } from '../../styled-components';
+
 class Main extends React.Component {
+  componentDidMount() {
+    this.props.getEventsForLocation();
+  }
   render() {
     return(
-      <p>test</p>
+      <ContentWrapper>
+        <Aside size="30%">
+          <P>asdds</P>
+        </Aside>
+      </ContentWrapper>
     );
   }
 }
 
 const mapStateToProps = (state) => {
   return {
-    isFetching: state.main.isFetching
+    isFetching: state.main.isFetching,
+    currentEvents: state.main.currentEvents
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getAuctions: () => {
-      dispatch(getAuctions());
+    getEventsForLocation: () => {
+      dispatch(getEventsForLocation());
     }
   };
 };

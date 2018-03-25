@@ -1,6 +1,6 @@
 const main = (state = {
   isFetching: false,
-  list: []
+  currentEvents: {}
 }, action) => {
   switch (action.type) {
     case "IS_FETCHING_MAIN":
@@ -12,6 +12,14 @@ const main = (state = {
       return {
         ...state,
         isFetching: false
+      };
+    case "GET_EVENTS_FOR_LOCATION":
+      return {
+        ...state,
+        currentEvents: {
+          ...state.currentEvents,
+          loc: action.payload
+        }
       };
     default:
       state = state;

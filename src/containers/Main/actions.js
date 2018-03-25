@@ -1,5 +1,5 @@
-export function getAuctions() {
+export function getEventsForLocation() {
   return {
-    type: "GET_AUCTIONS"
+    type: "GET_EVENTS_FOR_LOCATION"
   };
 }
