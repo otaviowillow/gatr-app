@@ -4,12 +4,7 @@ import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props
 
 import { facebookLogin } from '../System/actions';
 
-// import { ContentWrapper, Aside, P } from '../../styled-components';
-
 class Home extends React.Component {
-  // componentDidMount() {
-  //   this.props.getEventsForLocation();
-  // }
   render() {
     return(
       <div>

@@ -21,7 +21,7 @@ const Root = () => {
           <div>
             <Route exact path="/home" component={Home} />
             <Route exact path="/" component={Events} />
-            <Route exact path="/event" component={Event} />
+            <Route exact path="/event/:id" component={Event} />
           </div>
         </Router>
       </PersistGate>
