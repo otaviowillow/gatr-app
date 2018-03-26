@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="39px" viewBox="0 0 30 39" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="101.999998%" y2="100.999999%" id="linearGradient-1">
+            <stop stop-color="#51C7FF" offset="0%"></stop>
+            <stop stop-color="#8407C3" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#C8C8C8" offset="0%"></stop>
+            <stop stop-color="#979797" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Not-Logged" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Index" transform="translate(-797.000000, -425.000000)" fill-rule="nonzero">
+            <g id="map" transform="translate(414.000000, 101.000000)">
+                <g id="logo" transform="translate(382.000000, 323.000000)">
+                    <path d="M16.025641,2.32450331 C8.32020196,2.32450331 2.05128205,8.63835444 2.05128205,16.3991245 C2.05128205,19.687615 3.17689645,22.7160166 5.0603569,25.1146803 L16.025641,39 L26.9909252,25.1146803 C28.8743856,22.7160166 30,19.687615 30,16.3991245 C30,8.63835444 23.7310801,2.32450331 16.025641,2.32450331 Z" id="Shape" stroke="url(#linearGradient-2)" stroke-width="1" fill="url(#linearGradient-1)"></path>
+                    <g id="logo&gt;art" transform="translate(6.153846, 6.198675)" fill="#FFFFFF">
+                        <path d="M8.28773123,10.6721642 C7.97952509,11.0192245 7.9039432,11.2683519 7.5,11.9212377 C7.76117741,12.1076537 8.26253727,12.5380428 8.61021396,13.2794118 C9.30472753,12.8713582 9.62888985,12.8095059 9.9967217,12.4925127 C12.4002257,10.4221777 18.2855354,3.00075699 18.0831439,2.78599195 C17.8706748,2.558341 10.4040241,8.29772191 8.28773123,10.6721642 Z M6.83629346,12.5385648 C5.79118688,12.3470904 4.759533,13.0311762 4.07092295,14.7405203 C3.38147211,16.4498645 2.15055012,17.1339503 1.91176471,17.092174 C3.19649749,17.5734711 7.11459618,18.8041292 8.08823529,14.1190989 C7.67456479,12.9954923 6.83629346,12.5385648 6.83629346,12.5385648 Z" id="Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

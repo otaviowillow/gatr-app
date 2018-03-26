@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="39px" viewBox="0 0 30 39" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="101.999998%" y2="100.999999%" id="linearGradient-1">
+            <stop stop-color="#51C7FF" offset="0%"></stop>
+            <stop stop-color="#8407C3" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#C8C8C8" offset="0%"></stop>
+            <stop stop-color="#979797" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Not-Logged" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Index" transform="translate(-797.000000, -425.000000)" fill-rule="nonzero">
+            <g id="map" transform="translate(414.000000, 101.000000)">
+                <g id="logo" transform="translate(382.000000, 323.000000)">
+                    <path d="M16.025641,2.32450331 C8.32020196,2.32450331 2.05128205,8.63835444 2.05128205,16.3991245 C2.05128205,19.687615 3.17689645,22.7160166 5.0603569,25.1146803 L16.025641,39 L26.9909252,25.1146803 C28.8743856,22.7160166 30,19.687615 30,16.3991245 C30,8.63835444 23.7310801,2.32450331 16.025641,2.32450331 Z" id="Shape" stroke="url(#linearGradient-2)" stroke-width="1" fill="url(#linearGradient-1)"></path>
+                    <g id="logo&gt;film" transform="translate(6.153846, 6.198675)" fill="#FFFFFF">
+                        <path d="M13.6764706,15.9765007 C13.6764706,16.2777834 13.351686,16.5220588 12.9509986,16.5220588 L3.51958959,16.5220588 C3.11890225,16.5220588 2.79411765,16.2777834 2.79411765,15.9765007 L2.79411765,8.88382568 C2.79411765,8.5824784 3.11890225,8.33823529 3.51958959,8.33823529 L12.9509986,8.33823529 C13.351686,8.33823529 13.6764706,8.582543 13.6764706,8.88382568 L13.6764706,15.9765007 L13.6764706,15.9765007 Z" id="Shape"></path>
+                        <ellipse id="Oval" cx="5.58823529" cy="6.17647059" rx="1.76470588" ry="1.85294118"></ellipse>
+                        <ellipse id="Oval" cx="10.5882353" cy="5.71323529" rx="2.35294118" ry="2.47058824"></ellipse>
+                        <path d="M17.6470588,16.5143651 C17.6470588,16.5143651 17.5882743,16.9852941 17.1764568,16.9852941 C16.7646689,16.9852941 14.1176471,14.3494313 14.1176471,14.0025856 L14.1176471,10.5489165 C14.1176471,10.2021025 16.7059139,7.56617647 17.1764568,7.56617647 C17.6470588,7.56617647 17.6470588,8.03713709 17.6470588,8.03713709 L17.6470588,16.5143651 L17.6470588,16.5143651 Z" id="Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

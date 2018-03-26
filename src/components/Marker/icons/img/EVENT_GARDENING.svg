@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="39px" viewBox="0 0 30 39" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="101.999998%" y2="100.999999%" id="linearGradient-1">
+            <stop stop-color="#51C7FF" offset="0%"></stop>
+            <stop stop-color="#8407C3" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#C8C8C8" offset="0%"></stop>
+            <stop stop-color="#979797" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Not-Logged" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Index" transform="translate(-797.000000, -425.000000)" fill-rule="nonzero">
+            <g id="map" transform="translate(414.000000, 101.000000)">
+                <g id="logo" transform="translate(382.000000, 323.000000)">
+                    <path d="M16.025641,2.32450331 C8.32020196,2.32450331 2.05128205,8.63835444 2.05128205,16.3991245 C2.05128205,19.687615 3.17689645,22.7160166 5.0603569,25.1146803 L16.025641,39 L26.9909252,25.1146803 C28.8743856,22.7160166 30,19.687615 30,16.3991245 C30,8.63835444 23.7310801,2.32450331 16.025641,2.32450331 Z" id="Shape" stroke="url(#linearGradient-2)" stroke-width="1" fill="url(#linearGradient-1)"></path>
+                    <g id="logo&gt;gardening" transform="translate(6.153846, 6.198675)" fill="#FFFFFF">
+                        <path d="M9.2216636,5.24088488 C8.07735524,5.43058938 7.03953355,5.98550425 6.22039752,6.84562362 L6.0419761,7.03296611 C5.01343061,8.11293888 4.44702665,9.54880664 4.44702665,11.0760765 C4.44702665,12.4696137 4.91882353,13.7869295 5.78274816,14.8273318 L3.67647059,17.0388967 L4.21365579,17.6029412 L6.31988281,15.3914028 C7.31074219,16.2985237 8.56532858,16.7939104 9.89250689,16.7939104 C11.3470749,16.7939104 12.7145427,16.1991597 13.7430882,15.1192135 L13.9215097,14.931871 C14.740671,14.0717781 15.2691613,12.9820388 15.4498323,11.7805416 L16.6176471,4.01470588 L9.2216636,5.24088488 Z M6.85103813,14.6691176 C6.75679493,14.5847828 6.66515789,14.4963041 6.57662339,14.403369 C6.4880889,14.3104078 6.40384834,14.2141889 6.32352941,14.1152335 L12.2666089,7.875 L12.7941176,8.42888415 L6.85103813,14.6691176 Z" id="Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
