@@ -6,7 +6,7 @@ const events = (state = {
       lng: -123.115381
     },
     distance: '',
-    zoom: 7
+    zoom: 15
   },
   list: []
 }, action) => {

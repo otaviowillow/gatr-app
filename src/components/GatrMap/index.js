@@ -3,7 +3,7 @@ import GoogleMapReact from 'google-map-react';
 
 import { MapStyles } from './styles';
 
-const GatrMap = ({ center, zoom }) => (
+const GatrMap = ({ center, zoom, children }) => (
   <div style={{width: '100%', height: '100%'}}>
     <GoogleMapReact
       bootstrapURLKeys={{ key: 'AIzaSyB37P5EV180Bj28TMtIYBRQjfeiiuHpI1c' }}
@@ -11,7 +11,9 @@ const GatrMap = ({ center, zoom }) => (
         styles: MapStyles
       }}
       center={center}
-      defaultZoom={zoom} />
+      defaultZoom={zoom}>
+      {children}
+    </GoogleMapReact>
   </div>
 );
 

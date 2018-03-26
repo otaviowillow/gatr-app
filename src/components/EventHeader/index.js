@@ -1,8 +1,8 @@
 import React from 'react';
 
-const EventHeader = ({ title }) => (
+const EventHeader = ({ event }) => (
   <div>
-    <h2>{title}</h2>
+    <h2>{event.name}</h2>
   </div>
 );
 
