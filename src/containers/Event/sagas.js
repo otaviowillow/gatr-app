@@ -19,7 +19,6 @@ export function* handleEvent() {
         Authorization: bearer
       }
     });
-    yield console.log(response);
     yield put({type: 'SET_EVENT', payload: response.data.data});
   } catch(error) {
     yield put({type: 'DISPLAY_ERROR_MESSAGE', payload: error});

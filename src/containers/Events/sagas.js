@@ -10,7 +10,6 @@ const currentUser = state => state.system.user;
 const currentLoc = state => state.events.loc;
 
 export function* handleEventsForLocation() {
-  yield console.log('??????????');
   yield put({type: 'IS_FETCHING_MAIN'});
   try {
     const user = yield select(currentUser);
@@ -19,17 +18,15 @@ export function* handleEventsForLocation() {
 
     const response = yield call(axios.get, '/search', {
       params: {
-        lat: loc.lat,
-        lng: loc.lng,
+        lat: loc.center.lat,
+        lng: loc.center.lng,
         distance: 800
       }, headers: {
         Authorization: bearer
       }
     });
-    yield console.log(response);
     yield put({type: 'SET_EVENTS', payload: response.data.data});
   } catch(error) {
-    yield console.log(error);
     yield put({type: 'DISPLAY_ERROR_MESSAGE', payload: error.response.data.errors});
   }
   yield put({type: 'DONE_FETCHING_MAIN'});

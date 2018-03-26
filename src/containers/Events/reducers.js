@@ -1,10 +1,12 @@
 const events = (state = {
   isFetching: true,
   loc: {
-    lat: '',
-    lng: '',
+    center: {
+      lat: 49.2753861,
+      lng: -123.115381
+    },
     distance: '',
-    zoom: ''
+    zoom: 7
   },
   list: []
 }, action) => {
@@ -20,7 +22,6 @@ const events = (state = {
         isFetching: false
       };
     case "SET_EVENTS":
-      console.log(action.payload);
       return {
         ...state,
         list: action.payload
@@ -30,8 +31,7 @@ const events = (state = {
         ...state,
         loc: {
           ...state.loc,
-          lng: action.payload.lng,
-          lat: action.payload.lat
+          center: action.payload
         }
       };
     default:

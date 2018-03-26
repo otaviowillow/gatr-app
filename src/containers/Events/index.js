@@ -7,14 +7,14 @@ import { getEventsForLocation } from './actions';
 import { ContentWrapper, Aside } from '../../styled-components';
 
 import EventHeader from '../../components/EventHeader';
+import GatrMap from '../../components/GatrMap';
 
 class Events extends React.Component {
   componentWillMount() {
     const query = parse(location.search.substr(1));
-
     this.props.getEventsForLocation({
-      lat: query.lat,
-      lng: query.lng
+      lat: parseFloat(query.lat),
+      lng: parseFloat(query.lng)
     });
   }
   render() {
@@ -29,6 +29,12 @@ class Events extends React.Component {
             <EventHeader key={i} title={event.name} />
           ))}
         </Aside>
+        <Aside size="60%">
+          <GatrMap
+            center={this.props.loc.center}
+            zoom={this.props.loc.zoom}
+          />
+        </Aside>
       </ContentWrapper>
     );
   }
@@ -37,7 +43,8 @@ class Events extends React.Component {
 const mapStateToProps = (state) => {
   return {
     isFetching: state.events.isFetching,
-    events: state.events.list
+    events: state.events.list,
+    loc: state.events.loc
   };
 };
 
