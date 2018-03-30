@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 const eventLink = id => '/event/' + id;
 
-const EventHeader = ({ event }) => (
-  <div>
+const EventHeader = ({ event, onHover }) => (
+  <div onMouseEnter={() => onHover(event.id)}>
     <Link to={eventLink(event.id)}>
-      <h2>{event.name}</h2>
+      <h2 style={event.selected ? {border: '1px solid red'} : null}>{event.name}</h2>
     </Link>
   </div>
 );

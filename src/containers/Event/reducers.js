@@ -16,7 +16,6 @@ const event = (state = {
         isFetching: false
       };
     case "GET_EVENT":
-      console.log('ghet event reduccer');
       return {
         ...state,
         item: {

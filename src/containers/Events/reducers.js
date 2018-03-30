@@ -3,6 +3,7 @@ const events = (state = {
     all: false,
     events: false
   },
+  hoveredId: 0,
   timer: 0,
   loc: {
     center: {
@@ -51,6 +52,15 @@ const events = (state = {
       return {
         ...state,
         list: action.payload
+      };
+    case "SELECT_EVENT":
+      return {
+        ...state,
+        hoveredId: action.payload,
+        list: [...state.list.map(event => {
+          event.id === state.hoveredId ? event.selected = true : event.selected = false;
+          return event;
+        })]
       };
     case "SET_UPDATE_TIMER":
       return {

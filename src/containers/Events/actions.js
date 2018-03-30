@@ -12,3 +12,10 @@ export function handleMapCenterChange(loc) {
     payload: loc
   };
 }
+
+export function selectEvent(id) {
+  return {
+    type: "SELECT_EVENT",
+    payload: id
+  };
+}

@@ -5,12 +5,11 @@ import { getEvent } from './actions';
 
 import { ContentWrapper, Aside } from '../../styled-components';
 
-import Marker from '../../components/Marker';
-import GatrMap from '../../components/GatrMap';
+// import Marker from '../../components/Marker';
+// import GatrMap from '../../components/GatrMap';
 
 class Event extends React.Component {
   componentDidMount() {
-    console.log(this.props.match.params.id);
     this.props.getEvent(this.props.match.params.id);
   }
   render() {
@@ -20,7 +19,8 @@ class Event extends React.Component {
     return (
       <ContentWrapper>
         <Aside size="60%">
-          <p>{this.props.event.name}</p>
+          <p>asdsa</p>
+          {/* <p>{this.props.event.name}</p>
         </Aside>
         <Aside size="40%">
           <GatrMap
@@ -34,7 +34,7 @@ class Event extends React.Component {
               lat={this.props.venue.location.latitude}
               lng={this.props.venue.location.longitude}
             />
-          </GatrMap>
+          </GatrMap> */}
         </Aside>
       </ContentWrapper>
     );

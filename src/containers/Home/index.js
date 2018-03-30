@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
 
-import { facebookLogin } from '../System/actions';
+import { facebookLogin, logOut } from '../System/actions';
 
 class Home extends React.Component {
   render() {
@@ -18,6 +18,7 @@ class Home extends React.Component {
             <button onClick={renderProps.onClick}>This is my custom FB button</button>
           )}
         />
+
       </div>
     );
   }
@@ -33,6 +34,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     facebookLogin: (token) => {
       dispatch(facebookLogin(token));
+    },
+    logOut: (token) => {
+      dispatch(logOut(token));
     }
   };
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { parse } from 'qs';
 
-import { getEventsForLocation, handleMapCenterChange } from './actions';
+import { getEventsForLocation, handleMapCenterChange, selectEvent } from './actions';
 
 import { ContentWrapper, Aside } from '../../styled-components';
 
@@ -30,7 +30,11 @@ class Events extends React.Component {
             this.props.isFetching.events ?
               <p>...loading...</p>
               : this.props.events.map((event, i) => (
-                <EventHeader key={i} event={event} />
+                <EventHeader
+                  key={i}
+                  event={event}
+                  onHover={eventId => this.props.selectEvent(eventId)}
+                />
               ))
           }
         </Aside>
@@ -45,7 +49,7 @@ class Events extends React.Component {
                 marker={event}
                 lat={event.venue.location.latitude}
                 lng={event.venue.location.longitude}
-                
+                onHover={eventId => this.props.selectEvent(eventId)}
               />
             ))}
           </GatrMap>
@@ -70,6 +74,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     handleMapCenterChange: (loc) => {
       dispatch(handleMapCenterChange(loc));
+    },
+    selectEvent: (id) => {
+      dispatch(selectEvent(id));
     },
   };
 };

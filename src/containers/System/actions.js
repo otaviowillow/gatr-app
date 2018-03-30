@@ -4,3 +4,10 @@ export function facebookLogin(token) {
     payload: token
   };
 }
+
+export function logOut(token) {
+  return {
+    type: "LOGOUT_USER",
+    payload: token
+  };
+}

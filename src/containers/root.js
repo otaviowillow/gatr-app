@@ -20,7 +20,7 @@ const Root = () => {
         <Router>
           <div>
             <Route exact path="/home" component={Home} />
-            <Route exact path="/" component={Events} />
+            <Route exact path="/events" component={Events} />
             <Route exact path="/event/:id" component={Event} />
           </div>
         </Router>
