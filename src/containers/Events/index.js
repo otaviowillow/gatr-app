@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { parse } from 'qs';
 
-import { getEventsForLocation } from './actions';
+import { getEventsForLocation, handleMapCenterChange } from './actions';
 
 import { ContentWrapper, Aside } from '../../styled-components';
 
@@ -19,19 +19,24 @@ class Events extends React.Component {
     });
   }
   render() {
-    if(this.props.isFetching) {
+    if(this.props.isFetching.all) {
       return <p>Loading...</p>;
     }
 
     return(
       <ContentWrapper>
         <Aside size="40%">
-          {this.props.events.map((event, i) => (
-            <EventHeader key={i} event={event} />
-          ))}
+          {
+            this.props.isFetching.events ?
+              <p>zd...</p>
+              : this.props.events.map((event, i) => (
+                <EventHeader key={i} event={event} />
+              ))
+          }
         </Aside>
         <Aside size="60%">
           <GatrMap
+            onChange={r => this.props.handleMapCenterChange(r.center)}
             center={this.props.loc.center}
             zoom={this.props.loc.zoom}>
             {this.props.events.map((event, i) => (
@@ -61,7 +66,10 @@ const mapDispatchToProps = (dispatch) => {
   return {
     getEventsForLocation: (loc) => {
       dispatch(getEventsForLocation(loc));
-    }
+    },
+    handleMapCenterChange: (loc) => {
+      dispatch(handleMapCenterChange(loc));
+    },
   };
 };
 
