@@ -47,6 +47,7 @@ class Events extends React.Component {
               <Marker
                 key={i}
                 marker={event}
+                selected={event.selected}
                 lat={event.venue.location.latitude}
                 lng={event.venue.location.longitude}
                 onHover={eventId => this.props.selectEvent(eventId)}
