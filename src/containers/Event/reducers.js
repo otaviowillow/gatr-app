@@ -1,4 +1,4 @@
-const events = (state = {
+const event = (state = {
   isFetching: false,
   item: {
     id: ''
@@ -16,6 +16,7 @@ const events = (state = {
         isFetching: false
       };
     case "GET_EVENT":
+      console.log('ghet event reduccer');
       return {
         ...state,
         item: {
@@ -34,4 +35,4 @@ const events = (state = {
   return state;
 };
 
-export default events;
+export default event;

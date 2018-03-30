@@ -10,6 +10,7 @@ import GatrMap from '../../components/GatrMap';
 
 class Event extends React.Component {
   componentDidMount() {
+    console.log(this.props.match.params.id);
     this.props.getEvent(this.props.match.params.id);
   }
   render() {
