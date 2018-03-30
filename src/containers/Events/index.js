@@ -28,7 +28,7 @@ class Events extends React.Component {
         <Aside size="40%">
           {
             this.props.isFetching.events ?
-              <p>zd...</p>
+              <p>...loading...</p>
               : this.props.events.map((event, i) => (
                 <EventHeader key={i} event={event} />
               ))
@@ -45,6 +45,7 @@ class Events extends React.Component {
                 marker={event}
                 lat={event.venue.location.latitude}
                 lng={event.venue.location.longitude}
+                
               />
             ))}
           </GatrMap>
