@@ -4,7 +4,9 @@ export const color = {
   primary3: '#8407C3',
   primary4: '#D7C2FA',
   secundary1: '#51C7FF',
-  accent1: '#BD10E0'
+  accent1: '#BD10E0',
+  black: '#000',
+  white: '#fff'
 };
 
 export const breakpoints = {

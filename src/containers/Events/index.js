@@ -4,7 +4,7 @@ import { parse } from 'qs';
 
 import { getEventsForLocation, handleMapCenterChange, selectEvent } from './actions';
 
-import { ContentWrapper, Aside } from '../../styled-components';
+import { ContentWrapper, Aside, Main } from '../../styled-components';
 
 import EventHeader from '../../components/EventHeader';
 import GatrMap from '../../components/GatrMap';
@@ -39,7 +39,7 @@ class Events extends React.Component {
               ))
           }
         </Aside>
-        <Aside size="60%">
+        <Main size="60%">
           <GatrMap
             onChange={r => this.props.handleMapCenterChange(r.center)}
             center={this.props.loc.center}
@@ -56,7 +56,7 @@ class Events extends React.Component {
               />
             ))}
           </GatrMap>
-        </Aside>
+        </Main>
       </ContentWrapper>
     );
   }
