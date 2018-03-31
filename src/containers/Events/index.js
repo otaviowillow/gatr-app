@@ -47,6 +47,7 @@ class Events extends React.Component {
               <Marker
                 key={i}
                 marker={event}
+                clustered={this.props.events.filter(e => e.venue.name === event.venue.name)}
                 selected={event.selected}
                 lat={event.venue.location.latitude}
                 lng={event.venue.location.longitude}
