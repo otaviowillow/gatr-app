@@ -33,7 +33,8 @@ class Events extends React.Component {
                 <EventHeader
                   key={i}
                   event={event}
-                  onHover={eventId => this.props.selectEvent(eventId)}
+                  selected={event.selected}
+                  onHover={eventId => eventId !== this.props.hoveredId ? this.props.selectEvent(eventId) : null}
                 />
               ))
           }
@@ -51,7 +52,7 @@ class Events extends React.Component {
                 selected={event.selected}
                 lat={event.venue.location.latitude}
                 lng={event.venue.location.longitude}
-                onHover={eventId => this.props.selectEvent(eventId)}
+                onHover={eventId => eventId !== this.props.hoveredId ? this.props.selectEvent(eventId) : null}
               />
             ))}
           </GatrMap>
@@ -65,6 +66,7 @@ const mapStateToProps = (state) => {
   return {
     isFetching: state.events.isFetching,
     events: state.events.list,
+    hoveredId: state.events.hoveredId,
     loc: state.events.loc
   };
 };

@@ -2,6 +2,12 @@ import styled from 'styled-components';
 
 const HeaderWrapper = styled.div`
   position: relative;
+  border: 1px solid blue;
+  a {
+    display: inline-block;
+    padding: 80px 0;
+    border: 1px solid blue;
+  }
   &:before {
     content: '';
     position: absolute;
