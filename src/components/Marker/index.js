@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { ClusteredIcon, Icon } from '../../styled-components';
 import { icon } from './icons';
 
 const categoryIcon = category => category ? icon[category] : icon['EVENT_UNDEFINED'];
@@ -7,41 +8,19 @@ const categoryIcon = category => category ? icon[category] : icon['EVENT_UNDEFIN
 const Marker = ({ marker, clustered, selected, onHover }) => {
   if(clustered && clustered.length > 1) {
     return (
-      <div style={selected ? {
-        position: 'relative',
-        display: 'block',
-        float: 'left',
-        width: 'auto',
-        transform: 'scale(1.3, 1.3)',
-        zIndex: '999'
-      } : {
-        position: 'relative',
-        display: 'block',
-        float: 'left',
-        width: 'auto'
-      }}>
-        <span style={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          color: 'white',
-          transform: 'translate(-50%, -70%)'
-        }}>{clustered.length}</span>
-        <img
+      <ClusteredIcon amount={clustered.length}>
+        <Icon
+          selected={selected}
           src={icon['EVENT_UNDEFINED']}
           onMouseEnter={() => onHover(marker.id)}
         />
-      </div>
+      </ClusteredIcon>
     );
   }
 
   return (
-    <img
-      style={selected ? {
-        transform: 'scale(1.3, 1.3)',
-        position: 'relative',
-        zIndex: '999'
-      } : null}
+    <Icon
+      selected={selected}
       src={categoryIcon(marker.category)}
       onMouseEnter={() => onHover(marker.id)}
     />

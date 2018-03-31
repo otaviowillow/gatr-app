@@ -33,7 +33,7 @@ class Events extends React.Component {
                 <EventHeader
                   key={i}
                   event={event}
-                  selected={event.selected}
+                  selected={event.id === this.props.hoveredId}
                   onHover={eventId => eventId !== this.props.hoveredId ? this.props.selectEvent(eventId) : null}
                 />
               ))
@@ -49,7 +49,7 @@ class Events extends React.Component {
                 key={i}
                 marker={event}
                 clustered={this.props.events.filter(e => e.venue.name === event.venue.name)}
-                selected={event.selected}
+                selected={event.id === this.props.hoveredId}
                 lat={event.venue.location.latitude}
                 lng={event.venue.location.longitude}
                 onHover={eventId => eventId !== this.props.hoveredId ? this.props.selectEvent(eventId) : null}

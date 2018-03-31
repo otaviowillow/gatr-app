@@ -5,6 +5,7 @@ const HeaderWrapper = styled.div`
   border: 1px solid blue;
   a {
     display: inline-block;
+    width: 100%;
     padding: 80px 0;
     border: 1px solid blue;
   }
