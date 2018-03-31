@@ -8,7 +8,7 @@ const categoryIcon = category => category ? icon[category] : icon['EVENT_UNDEFIN
 const Marker = ({ marker, clustered, selected, onHover }) => {
   if(clustered && clustered.length > 1) {
     return (
-      <ClusteredIcon amount={clustered.length}>
+      <ClusteredIcon selected={selected} amount={clustered.length}>
         <Icon
           selected={selected}
           src={icon['EVENT_UNDEFINED']}

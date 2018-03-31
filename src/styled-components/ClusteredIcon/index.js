@@ -5,17 +5,15 @@ const ClusteredIcon = styled.figure`
   display: block;
   float: left;
   width: auto;
-  border: 1px solid red;
   &:after {
-    content: ${props => props.amount};
+    content: '4';
     display: block;
     position: absolute;
     top: 50%;
     left: 50%;
     color: white;
-    border: 1px solid red;
-    z-index: 998;
-    transform: translate(-50%. -70%);
+    z-index: ${props => props.selected ? '3' : 'inherit'};
+    transform: translate(-50%, -70%);
   }
 `;
 
