@@ -15,7 +15,7 @@ const Landing = styled(Section)`
     height: 100%;
     z-index: 2;
     background-image: linear-gradient(-134deg, ${color.primary1} 0%, ${color.primary2} 100%);
-    opacity: .4;
+    opacity: .7;
   }
   * {
     position: relative;
