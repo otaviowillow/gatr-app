@@ -5,6 +5,8 @@ import { icon } from './icons';
 
 const categoryIcon = category => category ? icon[category] : icon['EVENT_UNDEFINED'];
 
+console.log(icon);
+
 const Marker = ({ marker, clustered, selected, onHover }) => {
   if(clustered && clustered.length > 1) {
     return (

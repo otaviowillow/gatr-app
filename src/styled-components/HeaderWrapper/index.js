@@ -8,6 +8,7 @@ const HeaderWrapper = styled.div`
   background-image: ${props => props.bg ? 'url(' + props.bg + ')' : null};
   background-size: cover;
   position: relative;
+  box-shadow: 1px 40px 20px;
   a {
     position: relative;
     display: inline-block;

@@ -17,7 +17,7 @@ const inAndOut = keyframes`
 `;
 
 const FaIcon = styled(FontAwesomeIcon)`
-  opacity: 1;
+  opacity: 0;
   color: white;
   font-size: 1.5em;
   padding: 0 4%;
