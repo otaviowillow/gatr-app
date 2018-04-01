@@ -1,5 +1,7 @@
+import { replace } from 'react-router-redux';
 import { takeEvery, put, select, call } from 'redux-saga/effects';
 import axios from 'axios';
+import qs from 'qs';
 
 axios.defaults.baseURL = 'https://dev.api.gatrapp.com';
 axios.defaults.headers.common['api-key'] = '4d998ffb35d41368af53d9e4f49bfe82';
@@ -49,11 +51,15 @@ export function* handleEventsForLocation() {
 }
 
 export function* handleMapCenterChange() {
+  const loc = yield select(currentLoc);
+  const url = '/events?' + qs.stringify(loc.center);
   const cooldownTimer = yield select(currentTimer);
   if(!isCooldown(cooldownTimer)) return;
   yield put({type: 'IS_FETCHING_EVENTS_NEW_CENTER'});
   const response = yield* fetchEvents();
   yield put({type: 'SET_EVENTS', payload: response});
+  yield put(replace(url));
+
   yield put({type: 'DONE_FETCHING_EVENTS_NEW_CENTER'});
 }
 

@@ -9,6 +9,7 @@ import { Loading, ContentWrapper, Aside, Main } from '../../styled-components';
 import EventHeader from '../../components/EventHeader';
 import GatrMap from '../../components/GatrMap';
 import Marker from '../../components/Marker';
+import EventsList from '../../components/EventsList';
 
 class Events extends React.Component {
   componentWillMount() {
@@ -26,18 +27,16 @@ class Events extends React.Component {
     return(
       <ContentWrapper>
         <Aside size="40%">
-          {
-            this.props.isFetching.events ?
-              <Loading />
-              : this.props.events.map((event, i) => (
-                <EventHeader
-                  key={i}
-                  event={event}
-                  selected={event.id === this.props.hoveredId}
-                  onHover={eventId => eventId !== this.props.hoveredId ? this.props.selectEvent(eventId) : null}
-                />
-              ))
-          }
+          <EventsList events={this.props.events} loading={this.props.isFetching.events}>
+            {this.props.events.map((event, i) => (
+              <EventHeader
+                key={i}
+                event={event}
+                selected={event.id === this.props.hoveredId}
+                onHover={eventId => eventId !== this.props.hoveredId ? this.props.selectEvent(eventId) : null}
+              />
+            ))}
+          </EventsList>
         </Aside>
         <Main size="60%">
           <GatrMap

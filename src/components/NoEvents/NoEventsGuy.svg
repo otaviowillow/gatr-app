@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="170px" height="184px" viewBox="0 0 170 184" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>NoEventsGuy</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="NoEventsGuy" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(0.000000, 1.000000)">
+        <g>
+            <rect id="Rectangle-4" stroke="#430088" stroke-width="5" x="2.5" y="40.5" width="165" height="131"></rect>
+            <rect id="Rectangle-4" stroke="#430088" stroke-width="5" x="7.5" y="171.5" width="154" height="9"></rect>
+            <rect id="Rectangle-5" fill="#430189" fill-rule="evenodd" x="0" y="11" width="170" height="24"></rect>
+            <rect id="Rectangle-5" stroke="#D7C2FA" stroke-width="2" fill="#43018A" fill-rule="evenodd" x="14" y="0" width="13" height="19"></rect>
+            <rect id="Rectangle-5" stroke="#D7C2FA" stroke-width="2" fill="#43018A" fill-rule="evenodd" x="57" y="0" width="13" height="19"></rect>
+            <rect id="Rectangle-5" stroke="#D7C2FA" stroke-width="2" fill="#43018A" fill-rule="evenodd" x="100" y="0" width="13" height="19"></rect>
+            <rect id="Rectangle-5" stroke="#D7C2FA" stroke-width="2" fill="#43018A" fill-rule="evenodd" x="143" y="0" width="13" height="19"></rect>
+            <circle id="Oval" fill="#430088" fill-rule="evenodd" cx="27" cy="121" r="4"></circle>
+            <circle id="Oval" fill="#430088" fill-rule="evenodd" cx="147" cy="121" r="4"></circle>
+            <path d="M17,151.697266 C32.8671875,142.464844 56.3427734,137.848633 87.4267578,137.848633 C118.510742,137.848633 141.986328,142.464844 157.853516,151.697266" id="Path-2" stroke="#430088" stroke-width="3"></path>
+        </g>
+    </g>
+</svg>

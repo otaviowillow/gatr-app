@@ -7,10 +7,6 @@ import { HeaderWrapper, H2 } from '../../styled-components';
 const eventLink = id => '/event/' + id;
 
 const EventHeader = ({ event, selected, onHover }) => {
-  // const start = moment(event.startTime);
-  // const end = moment(event.endTime);
-  // const now = moment();
-
   return (
     <HeaderWrapper
       bg={event.coverPicture}
