@@ -9,22 +9,19 @@ const HeaderWrapper = styled.div`
   background-size: cover;
   position: relative;
   a {
+    position: relative;
     display: inline-block;
     width: 100%;
     padding: 80px 0;
+    z-index: 2;
   }
   &:before {
     content: '';
     position: absolute;
     background-image: ${props => props.selected ? selectedBg : regularBg(color.secundary1, color.primary1)};
-    opacity: .6;
+    opacity: ${props => props.selected ? '1' : '.75'};
     width: 100%;
     height: 100%;
-  }
-  &:hover {
-    &:before {
-      background-image: ;
-    }
   }
 `;
 

@@ -1,23 +1,21 @@
 import React from 'react';
+import faGlassMartini from '@fortawesome/fontawesome-free-solid/faGlassMartini';
+import faBirthdayCake from '@fortawesome/fontawesome-free-solid/faBirthdayCake';
+import faMusic from '@fortawesome/fontawesome-free-solid/faMusic';
+import faTicketAlt from '@fortawesome/fontawesome-free-solid/faTicketAlt';
 
 import LoadingWrapper from './LoadingWrapper';
-import Icon from './Icon';
+import FaIcon from './FaIcon';
 
 export default class Loading extends React.Component {
-    render() {
-        const isFetching = this.props.isFetching;
-
-        if (!isFetching) {
-            return null;
-        }
-
-        return (
-            <LoadingWrapper>
-                <Icon className="fa fa-glass" style={{animationDelay: '.1s'}} />
-                <Icon className="fa fa-birthday-cake" style={{animationDelay: '.3s'}} />
-                <Icon className="fa fa-music" style={{animationDelay: '.5s'}} />
-                <Icon className="fa fa-ticket"  style={{animationDelay: '.7s'}} />
-            </LoadingWrapper>
-        );
-    }
+  render() {
+    return (
+      <LoadingWrapper>
+        <FaIcon icon={faGlassMartini} style={{animationDelay: '.1s'}} />
+        <FaIcon icon={faBirthdayCake} style={{animationDelay: '.3s'}} />
+        <FaIcon icon={faMusic} style={{animationDelay: '.5s'}} />
+        <FaIcon icon={faTicketAlt}  style={{animationDelay: '.7s'}} />
+      </LoadingWrapper>
+    );
+  }
 }

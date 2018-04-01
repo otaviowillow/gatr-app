@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 
-import { HeaderWrapper } from '../../styled-components';
+import { HeaderWrapper, H2 } from '../../styled-components';
 
 const eventLink = id => '/event/' + id;
 
@@ -18,7 +18,7 @@ const EventHeader = ({ event, selected, onHover }) => {
       onMouseEnter={() => onHover(event.id)}>
       <Link to={eventLink(event.id)}>
         <span>{moment(event.startTime).fromNow()}</span>
-        <h2>{event.name}</h2>
+        <H2>{event.name}</H2>
       </Link>
     </HeaderWrapper>
   );
