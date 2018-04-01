@@ -2,7 +2,7 @@ import { takeEvery, put, select, call } from 'redux-saga/effects';
 import axios from 'axios';
 
 const AUTH_TOKEN = '4d998ffb35d41368af53d9e4f49bfe82';
-axios.defaults.baseURL = 'https://dev.api.gatrapp.com';
+axios.defaults.baseURL = 'https://api.gatrapp.com';
 axios.defaults.headers.common['api-key'] = AUTH_TOKEN;
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
