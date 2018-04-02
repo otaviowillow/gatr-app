@@ -9,6 +9,7 @@ const { store, persistor } = configureStore();
 import baseStyles from '../styled-components/baseStyles';
 
 import Home from './Home';
+import CreateEvent from './CreateEvent';
 import Events from './Events';
 import Event from './Event';
 
@@ -20,6 +21,7 @@ const Root = () => {
         <Router>
           <div>
             <Route exact path="/home" component={Home} />
+            <Route exact path="/create-event" component={CreateEvent} />
             <Route exact path="/events" component={Events} />
             <Route exact path="/event/:id" component={Event} />
           </div>
