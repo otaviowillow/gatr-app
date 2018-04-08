@@ -14,7 +14,7 @@ const Marker = ({ marker, clustered, selected, onHover }) => {
         <Icon
           selected={selected}
           src={icon['EVENT_UNDEFINED']}
-          onMouseEnter={() => onHover(marker.id)}
+          onMouseEnter={onHover ? () => onHover(marker.id) : null}
         />
       </ClusteredIcon>
     );
@@ -24,7 +24,7 @@ const Marker = ({ marker, clustered, selected, onHover }) => {
     <Icon
       selected={selected}
       src={categoryIcon(marker.category)}
-      onMouseEnter={() => onHover(marker.id)}
+      onMouseEnter={onHover ? () => onHover(marker.id) : null}
     />
   );
 };

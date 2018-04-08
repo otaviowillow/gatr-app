@@ -7,6 +7,7 @@ import Icon from './Icon';
 import Aside from './Aside';
 import Main from './Main';
 import Section from './Section';
+import Button from './Button';
 import H2 from './H2';
 import P from './P';
 

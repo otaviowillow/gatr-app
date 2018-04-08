@@ -2,6 +2,9 @@ const createEvent = (state = {
   isFetching: {
     all: false,
     events: false
+  },
+  form: {
+    address: ''
   }
 }, action) => {
   switch (action.type) {
@@ -19,6 +22,14 @@ const createEvent = (state = {
         isFetching: {
           ...state.isFetching,
           all: false
+        }
+      };
+    case "CHANGE_ADDRESS_ON_FORM":
+      return {
+        ...state,
+        form: {
+          ...state.form,
+          address: action.payload
         }
       };
     case "CREATE_EVENT":

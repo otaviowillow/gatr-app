@@ -5,6 +5,7 @@ export const color = {
   primary4: '#D7C2FA',
   secundary1: '#51C7FF',
   accent1: '#BD10E0',
+  accent2: '#FF0043',
   black: '#000',
   white: '#fff'
 };
