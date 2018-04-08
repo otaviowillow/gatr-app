@@ -4,7 +4,9 @@ const createEvent = (state = {
     events: false
   },
   form: {
-    address: ''
+    image: null,
+    address: '',
+    user: null
   }
 }, action) => {
   switch (action.type) {
@@ -35,7 +37,18 @@ const createEvent = (state = {
     case "CREATE_EVENT":
       return {
         ...state,
-        form: action.payload
+        form: {
+          ...state.form,
+          user: action.payload
+        }
+      };
+    case "SET_EVENT_IMAGE":
+      return {
+        ...state,
+        form: {
+          ...state.form,
+          image: action.payload
+        }
       };
     default:
       state = state;

@@ -1,6 +1,8 @@
 import React from 'react';
 import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
 
+import { Autocomplete } from '../../styled-components';
+
 class GoogleSuggest extends React.Component {
   render() {
     const inputProps = {
@@ -9,18 +11,22 @@ class GoogleSuggest extends React.Component {
       placeholder: 'Search for a street or place',
     };
 
+    const rrr = re => {
+      console.log(re);
+      return getLatLng(re[0]);
+    };
+
     return (
-      <div>
+      <Autocomplete>
         <PlacesAutocomplete
           inputProps={inputProps}
           onSelect={
             () => geocodeByAddress(this.props.address)
-              .then(results => getLatLng(results[0]))
+              .then(results => rrr(results))
               .then(latLng => this.props.onSuggestSelect(latLng))
           }
         />
-        <button type="submit">Submit</button>
-      </div>
+      </Autocomplete>
     );
   }
 }

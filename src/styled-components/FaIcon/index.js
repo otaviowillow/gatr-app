@@ -16,13 +16,18 @@ const inAndOut = keyframes`
   }
 `;
 
+const animation = {
+  inAndOut: {
+    animation: inAndOut + ' 2s ease-out infinite'
+  }
+};
+
 const FaIcon = styled(FontAwesomeIcon)`
-  opacity: 0;
+  ${props => animation[props.animation]};
   color: white;
-  font-size: 1.5em;
   padding: 0 4%;
-  animation: ${inAndOut} 2s ease-out infinite;
-  height: 200px;
+  opacity: ${props => props.animation ? '0' : '1'};
+  height: ${props => props.animation ? '200px' : 'auto'};
 `;
 
 export default FaIcon;

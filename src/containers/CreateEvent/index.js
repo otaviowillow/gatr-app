@@ -2,28 +2,44 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Form, Text, TextArea, Checkbox } from 'react-form';
 
-import { createEvent, changeAddress } from './actions';
+import { createEvent, setEventImage, changeAddress } from './actions';
 
 import { getEventsForLocation } from '../Events/actions';
 
+import ImageDrop from '../../components/ImageDrop';
 import GatrMap from '../../components/GatrMap';
 import Marker from '../../components/Marker';
 import GoogleSuggest from '../../components/GoogleSuggest';
 
-import { ContentWrapper, Aside, Button } from '../../styled-components';
+import { ContentWrapper, Main, Button, Label } from '../../styled-components';
 
 class CreateEvent extends React.Component {
   render() {
     return (
-      <ContentWrapper>
-        <Aside size="60%">
-          <div style={{zIndex: 5, position: 'relative'}}>
-            <GoogleSuggest
-              changeAddress={address => this.props.changeAddress(address)}
-              onSuggestSelect={address => this.props.getEventsForLocation(address)}
-              address={this.props.form.address}
-            />
-          </div>
+      <ContentWrapper centered>
+        <Main size="60%">
+          <Form onSubmit={submittedValues => this.props.createEvent(submittedValues)}>
+            {formApi => (
+              <form onSubmit={formApi.submitForm} id="form2">
+                <ImageDrop
+                  image={this.props.form.image}
+                  setEventImage={file => this.props.setEventImage(file[0])}
+                />
+                <Label htmlFor="nameOfEvent">Name of the event</Label>
+                <Text field="nameOfEvent" id="nameOfEvent" />
+                <Label htmlFor="eventDescription">Bio</Label>
+                <TextArea field="eventDescription" id="eventDescription" />
+                <Label htmlFor="authorize" className="mr-2">Authorize</Label>
+                <Checkbox field="authorize" id="authorize" className="d-inline-block" />
+                <Button type="submit">Submit</Button>
+              </form>
+            )}
+          </Form>
+          <GoogleSuggest
+            changeAddress={address => this.props.changeAddress(address)}
+            onSuggestSelect={address => this.props.getEventsForLocation(address)}
+            address={this.props.form.address}
+          />
           <GatrMap
             noControls
             center={this.props.loc.center}
@@ -34,22 +50,7 @@ class CreateEvent extends React.Component {
               lng={this.props.loc.center.lng}
             />
           </GatrMap>
-        </Aside>
-        <Aside size="40%">
-          <Form onSubmit={submittedValues => this.props.createEvent(submittedValues)}>
-            {formApi => (
-              <form onSubmit={formApi.submitForm} id="form2">
-                <label htmlFor="nameOfEvent">Name of the event</label>
-                <Text field="nameOfEvent" id="nameOfEvent" />
-                <label htmlFor="eventDescription">Bio</label>
-                <TextArea field="eventDescription" id="eventDescription" />
-                <label htmlFor="authorize" className="mr-2">Authorize</label>
-                <Checkbox field="authorize" id="authorize" className="d-inline-block" />
-                <Button type="primary">Submit</Button>
-              </form>
-            )}
-          </Form>
-        </Aside>
+        </Main>
       </ContentWrapper>
     );
   }
@@ -66,6 +67,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     createEvent: (form) => {
       dispatch(createEvent(form));
+    },
+    setEventImage: (img) => {
+      dispatch(setEventImage(img));
     },
     changeAddress: (address) => {
       dispatch(changeAddress(address));
