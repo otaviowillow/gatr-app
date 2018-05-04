@@ -12,6 +12,7 @@ import Home from './Home';
 import CreateEvent from './CreateEvent';
 import Events from './Events';
 import Event from './Event';
+import PrivacyPolicy from './PrivacyPolicy';
 
 const Root = () => {
   baseStyles();
@@ -24,6 +25,7 @@ const Root = () => {
             <Route exact path="/create-event" component={CreateEvent} />
             <Route exact path="/events" component={Events} />
             <Route exact path="/event/:id" component={Event} />
+            <Route exact path="/privacy-policy" component={PrivacyPolicy} />
           </div>
         </Router>
       </PersistGate>

@@ -6,6 +6,14 @@ const ContentWrapper = styled.div`
   display: flex;
   height: 100vh;
   justify-content: ${props => props.centered ? 'center' : 'flex-start'};
+  h2 {
+    color: ${props => props.temp ? 'purple' : 'white' };
+    padding: ${props => props.temp ? '0 0 20px 0' : '0' };
+  }
+  p {
+    padding: ${props => props.temp ? '0 0 20px 0' : '0' };
+    border: none;
+  }
 `;
 
 export default ContentWrapper;

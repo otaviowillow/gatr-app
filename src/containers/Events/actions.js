@@ -13,6 +13,13 @@ export function handleMapCenterChange(loc) {
   };
 }
 
+export function getMapForPosition(loc) {
+  return {
+    type: "GET_MAP_FOR_POSITION",
+    payload: loc
+  };
+}
+
 export function selectEvent(id) {
   return {
     type: "SELECT_EVENT",

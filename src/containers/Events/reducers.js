@@ -65,6 +65,7 @@ const events = (state = {
       };
     case "GET_EVENTS_WITH_NEW_CENTER":
     case "GET_EVENTS_FOR_LOCATION":
+    case "GET_MAP_FOR_POSITION":
       return {
         ...state,
         loc: {

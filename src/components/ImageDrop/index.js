@@ -4,7 +4,6 @@ import faCameraRetro from '@fortawesome/fontawesome-free-solid/faCameraRetro';
 import { DropzoneWrapper, FaIcon } from '../../styled-components';
 
 const ImageDrop = ({setEventImage, image}) => {
-  console.log(image);
   if(image) {
     return (
       <DropzoneWrapper onDrop={setEventImage}>

@@ -4,7 +4,7 @@ import { Form, Text, TextArea, Checkbox } from 'react-form';
 
 import { createEvent, setEventImage, changeAddress } from './actions';
 
-import { getEventsForLocation } from '../Events/actions';
+import { getMapForPosition } from '../Events/actions';
 
 import ImageDrop from '../../components/ImageDrop';
 import GatrMap from '../../components/GatrMap';
@@ -37,7 +37,7 @@ class CreateEvent extends React.Component {
           </Form>
           <GoogleSuggest
             changeAddress={address => this.props.changeAddress(address)}
-            onSuggestSelect={address => this.props.getEventsForLocation(address)}
+            onSuggestSelect={address => this.props.getMapForPosition(address.coordinate)}
             address={this.props.form.address}
           />
           <GatrMap
@@ -74,8 +74,8 @@ const mapDispatchToProps = (dispatch) => {
     changeAddress: (address) => {
       dispatch(changeAddress(address));
     },
-    getEventsForLocation: (loc) => {
-      dispatch(getEventsForLocation(loc));
+    getMapForPosition: (loc) => {
+      dispatch(getMapForPosition(loc));
     }
   };
 };
