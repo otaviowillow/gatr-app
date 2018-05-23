@@ -14,7 +14,6 @@ import EventsList from '../../components/EventsList';
 class Events extends React.Component {
   componentWillMount() {
     const query = parse(location.search.substr(1));
-    console.log(location);
     this.props.getEventsForLocation({
       lat: parseFloat(query.lat),
       lng: parseFloat(query.lng)

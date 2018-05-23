@@ -1,4 +1,5 @@
 import { takeEvery, put, select, call } from 'redux-saga/effects';
+import { push } from 'react-router-redux';
 import axios from 'axios';
 
 const AUTH_TOKEN = '4d998ffb35d41368af53d9e4f49bfe82';
@@ -17,6 +18,8 @@ export function* handleLogin() {
     });
     yield put({type: 'SET_USER', payload: response.data.data});
     yield put({type: 'SET_USER_AUTH', payload: true});
+    yield put(push('/events?lat=49.2753714&lng=-123.1153594'));
+    window.location.reload();
   } catch(error) {
     yield put({type: 'DISPLAY_ERROR_MESSAGE', payload: error});
   }

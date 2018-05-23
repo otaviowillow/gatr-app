@@ -10,7 +10,8 @@ import Autocomplete from './Autocomplete';
 import Aside from './Aside';
 import Main from './Main';
 import Section from './Section';
-import Button from './Button';
+import Button from './Buttons/Button';
+import FacebookButton from './Buttons/FacebookButton';
 import H2 from './H2';
 import P from './P';
 import Label from './Label';
@@ -29,6 +30,7 @@ module.exports = {
   Main,
   Section,
   Button,
+  FacebookButton,
   Label,
   H2,
   P

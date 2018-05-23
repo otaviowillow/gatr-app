@@ -8,7 +8,6 @@ const Section = styled.section`
   align-items: ${props => props.center ? 'center' : 'flex-start'};
   text-align: ${props => props.center ? 'center' : 'left'};
   height: ${props => props.fullscreen ? '100vh' : 'auto'};
-  border: 1px solid red;
 `;
 
 export default Section;
