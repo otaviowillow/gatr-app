@@ -21,8 +21,6 @@ class Home extends React.Component {
             <h3>Find out all shows, events, movies, sports and more around your city or schedule your own party and invite your friends</h3>
             <FacebookLogin
               appId="140423843185571"
-              autoLoad
-              reauthenticate
               callback={response => this.props.facebookLogin(response.accessToken)}
               render={renderProps => (
                 <button onClick={renderProps.onClick}>This is my custom FB button</button>
