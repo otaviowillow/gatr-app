@@ -1,8 +1,21 @@
 export function createEvent(form) {
-  console.log(form);
   return {
     type: "CREATE_EVENT",
     payload: form
+  };
+}
+
+export function setStartTime(date) {
+  return {
+    type: "SET_START_TIME",
+    payload: date
+  };
+}
+
+export function setEndTime(date) {
+  return {
+    type: "SET_END_TIME",
+    payload: date
   };
 }
 

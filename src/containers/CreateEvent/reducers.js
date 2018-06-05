@@ -5,6 +5,8 @@ const createEvent = (state = {
   },
   form: {
     image: null,
+    startTime: null,
+    endTime: null,
     address: '',
     user: null
   }
@@ -48,6 +50,22 @@ const createEvent = (state = {
         form: {
           ...state.form,
           image: action.payload
+        }
+      };
+    case "SET_START_TIME":
+      return {
+        ...state,
+        form: {
+          ...state.form,
+          startTime: action.payload
+        }
+      };
+    case "SET_END_TIME":
+      return {
+        ...state,
+        form: {
+          ...state.form,
+          endTime: action.payload
         }
       };
     default:

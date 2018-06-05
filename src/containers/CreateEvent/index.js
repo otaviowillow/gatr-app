@@ -2,10 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Form, Text, TextArea, Checkbox } from 'react-form';
 
-import { createEvent, setEventImage, changeAddress } from './actions';
+import { createEvent, setEventImage, changeAddress, setEndTime, setStartTime } from './actions';
 
 import { getMapForPosition } from '../Events/actions';
 
+import TimePicker from '../../components/TimePicker';
 import ImageDrop from '../../components/ImageDrop';
 import GatrMap from '../../components/GatrMap';
 import Marker from '../../components/Marker';
@@ -25,6 +26,21 @@ class CreateEvent extends React.Component {
                   image={this.props.form.image}
                   setEventImage={file => this.props.setEventImage(file[0])}
                 />
+                <div>
+                  <TimePicker
+                    changeDate={asd => this.props.setStartTime(asd._d)}
+                  />
+                  {
+                    this.props.form.startTime ? (
+                      <div>
+                        <span> => </span>
+                        <TimePicker
+                          minDate={this.props.form.startTime}
+                        />
+                      </div>
+                    ) : null
+                  }
+                </div>
                 <Label htmlFor="nameOfEvent">Name of the event</Label>
                 <Text field="nameOfEvent" id="nameOfEvent" />
                 <Label htmlFor="eventDescription">Bio</Label>
@@ -67,6 +83,12 @@ const mapDispatchToProps = (dispatch) => {
   return {
     createEvent: (form) => {
       dispatch(createEvent(form));
+    },
+    setStartTime: (date) => {
+      dispatch(setStartTime(date));
+    },
+    setEndTime: (date) => {
+      dispatch(setEndTime(date));
     },
     setEventImage: (img) => {
       dispatch(setEventImage(img));
